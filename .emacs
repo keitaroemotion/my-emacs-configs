@@ -6,9 +6,9 @@
 (global-font-lock-mode 0)
 
 (add-to-list 'load-path "~/.emacs.d/evil")
-
 (add-to-list 'display-buffer-alist
      '("^\\*shell\\*$" . (display-buffer-same-window)))
+(add-to-list 'load-path "~/.emacs.d/neotree")
 
 ;; Enable Evil
 (require 'evil)
@@ -24,8 +24,8 @@
   (interactive)
   (load-file "$HOME/.emacs"))
 
-
-;;(set-face-background hl-line-face "gray13")
+(require 'neotree)
+(global-set-key (kbd "M-c") 'neotree-toggle)
 
 ;; M-x cd ... change the current working directory
 ;; [in term mode] C-x, k -> kill the buffer
